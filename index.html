@@ -601,17 +601,15 @@
 
     .team-card:hover { border-color: rgba(245,184,0,0.25); }
 
-    .team-avatar {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: rgba(245,184,0,0.15);
-      border: 2px solid rgba(245,184,0,0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
+    .team-logo {
+      height: 72px;
+      max-width: 200px;
+      object-fit: contain;
+      background: #fff;
+      border-radius: 8px;
+      padding: 0.5rem 0.75rem;
       margin-bottom: 1.25rem;
+      display: block;
     }
 
     .team-name {
@@ -848,16 +846,16 @@
     <p class="section-sub">Our founders come from the field — not just the boardroom.</p>
     <div class="team-grid">
       <div class="team-card">
-        <div class="team-avatar">⚡</div>
+        <img src="jazz-logo.jpg" alt="JAZZ Solar Solutions" class="team-logo" />
         <div class="team-name">JAZZ Solar Solutions</div>
         <div class="team-title">Co-Founder</div>
-        <p class="team-bio">A renewable energy firm with over 15 years of experience designing, installing, and operating solar systems across Ontario. 500+ projects completed, 30+ MW deployed, and recipients of the 2017 CanSIA Game Changer Award and 2021 OSEA Best-in-Class Renewable Energy Award.</p>
+        <p class="team-bio">A renewable energy firm with over 15 years of hands-on experience designing, installing, and operating solar systems across Ontario. 500+ projects completed, 30+ MW of clean energy deployed. Recipients of the 2017 CanSIA Game Changer Award and the 2021 OSEA Best-in-Class Renewable Energy Award.</p>
       </div>
       <div class="team-card">
-        <div class="team-avatar">🌿</div>
-        <div class="team-name">Indigenous Community Partner</div>
+        <img src="ldml-logo.png" alt="Lac des Mille Lacs First Nation" class="team-logo" />
+        <div class="team-name">Lac des Mille Lacs First Nation</div>
         <div class="team-title">Co-Founder</div>
-        <p class="team-bio">Moose AI was co-founded in partnership with a First Nations community — bringing deep roots in community energy, land stewardship, and sustainable infrastructure to the platform. More details coming soon.</p>
+        <p class="team-bio">A Saulteaux Ojibwe First Nation based in Northwestern Ontario and active leaders in community energy. LDML has operated solar infrastructure since 2017 and are 50% partners in a 57.2 MW solar generation project awarded through Ontario's IESO — bringing deep community energy experience and a long-term commitment to sustainable development to Moose AI.</p>
       </div>
     </div>
   </section>
