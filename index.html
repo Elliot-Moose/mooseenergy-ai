@@ -585,9 +585,9 @@
 
     /* TEAM */
     .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
       margin-top: 3rem;
     }
 
@@ -595,25 +595,34 @@
       background: var(--card-bg);
       border: 1px solid rgba(255,255,255,0.06);
       border-radius: 12px;
-      padding: 2rem;
+      padding: 2.5rem;
       transition: border-color 0.2s;
     }
 
     .team-card:hover { border-color: rgba(245,184,0,0.25); }
 
+    .team-card-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .team-card-inner.no-photo { grid-template-columns: 1fr; }
+
     .team-logo {
-      height: 72px;
-      max-width: 200px;
+      height: 80px;
+      max-width: 220px;
       object-fit: contain;
       background: #fff;
       border-radius: 8px;
-      padding: 0.5rem 0.75rem;
-      margin-bottom: 1.25rem;
+      padding: 0.6rem 1rem;
+      margin-bottom: 1.5rem;
       display: block;
     }
 
     .team-name {
-      font-size: 1.05rem;
+      font-size: 1.2rem;
       font-weight: 700;
       margin-bottom: 0.25rem;
     }
@@ -622,15 +631,43 @@
       font-size: 0.82rem;
       color: var(--gold);
       font-weight: 600;
-      margin-bottom: 0.75rem;
+      margin-bottom: 1rem;
       text-transform: uppercase;
       letter-spacing: 0.06em;
     }
 
     .team-bio {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: var(--muted);
-      line-height: 1.65;
+      line-height: 1.75;
+    }
+
+    .team-award {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(245,184,0,0.1);
+      border: 1px solid rgba(245,184,0,0.25);
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.3rem 0.75rem;
+      border-radius: 100px;
+      margin-bottom: 1rem;
+      margin-right: 0.5rem;
+    }
+
+    .team-photo {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 10px;
+      filter: brightness(0.9);
+    }
+
+    @media (max-width: 768px) {
+      .team-card-inner { grid-template-columns: 1fr; }
+      .team-photo { height: 200px; }
     }
 
     /* DIVIDER */
@@ -846,16 +883,27 @@
     <p class="section-sub">Our founders come from the field — not just the boardroom.</p>
     <div class="team-grid">
       <div class="team-card">
-        <img src="jazz-logo.jpg" alt="JAZZ Solar Solutions" class="team-logo" />
-        <div class="team-name">JAZZ Solar Solutions</div>
-        <div class="team-title">Co-Founder</div>
-        <p class="team-bio">A renewable energy firm with over 15 years of hands-on experience designing, installing, and operating solar systems across Ontario. 500+ projects completed, 30+ MW of clean energy deployed. Recipients of the 2017 CanSIA Game Changer Award and the 2021 OSEA Best-in-Class Renewable Energy Award.</p>
+        <div class="team-card-inner no-photo">
+          <div>
+            <img src="jazz-logo.jpg" alt="JAZZ Solar Solutions" class="team-logo" />
+            <div class="team-name">JAZZ Solar Solutions</div>
+            <div class="team-title">Co-Founder</div>
+            <span class="team-award">🏆 2021 OSEA Best-in-Class Renewable Energy</span>
+            <p class="team-bio">A renewable energy firm established in 2009 with over 15 years of hands-on experience designing, installing, and operating solar photovoltaic systems, battery storage, and microgrid technology across Ontario. With 500+ projects completed and 30+ MW of clean energy deployed, JAZZ brings unmatched field expertise and deep community partnerships to Moose AI.</p>
+          </div>
+        </div>
       </div>
       <div class="team-card">
-        <img src="ldml-logo.png" alt="Lac des Mille Lacs First Nation" class="team-logo" />
-        <div class="team-name">Lac des Mille Lacs First Nation</div>
-        <div class="team-title">Co-Founder</div>
-        <p class="team-bio">A Saulteaux Ojibwe First Nation based in Northwestern Ontario and active leaders in community energy. LDML has operated solar infrastructure since 2017 and are 50% partners in a 57.2 MW solar generation project awarded through Ontario's IESO — bringing deep community energy experience and a long-term commitment to sustainable development to Moose AI.</p>
+        <div class="team-card-inner">
+          <div>
+            <img src="ldml-logo.png" alt="Lac des Mille Lacs First Nation" class="team-logo" />
+            <div class="team-name">Lac des Mille Lacs First Nation</div>
+            <div class="team-title">Co-Founder</div>
+            <span class="team-award">🏆 2017 CanSIA Game Changer Award</span>
+            <p class="team-bio">"Our people have held and cared for our Lands and Traditional Territories since time immemorial." A Saulteaux Ojibwe First Nation in Northwestern Ontario, Lac des Mille Lacs has been operating solar infrastructure since 2017 and are 50% equity partners in a 57.2 MW solar generation project awarded through Ontario's IESO — bringing Indigenous land stewardship, community energy leadership, and long-term sustainable development to the heart of Moose AI.</p>
+          </div>
+          <img src="ldml-solar.jpg" alt="Lac des Mille Lacs First Nation solar array" class="team-photo" />
+        </div>
       </div>
     </div>
   </section>
