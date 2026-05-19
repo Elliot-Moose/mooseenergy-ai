@@ -659,15 +659,30 @@
 
     .team-photo {
       width: 100%;
-      height: 260px;
+      max-width: 230px;
+      aspect-ratio: 1 / 1;
       object-fit: cover;
+      object-position: center top;
       border-radius: 10px;
       filter: brightness(0.9);
+      justify-self: center;
     }
 
     @media (max-width: 768px) {
       .team-card-inner { grid-template-columns: 1fr; }
       .team-photo { height: 200px; }
+    }
+
+    /* TEAM SUBHEADING */
+    .team-subheading {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
     /* DIVIDER */
@@ -879,9 +894,54 @@
   <!-- TEAM -->
   <section id="team">
     <div class="section-label">Team</div>
-    <h2 class="section-title">Founded by Solar Practitioners</h2>
-    <p class="section-sub">Our founders come from the field — not just the boardroom.</p>
+    <h2 class="section-title">Built Where Solar Meets AI</h2>
+    <p class="section-sub">Our founders bring together decades of hands-on solar and community energy experience with MIT-trained machine learning expertise.</p>
+
+    <div class="team-subheading">Founders</div>
     <div class="team-grid">
+
+      <!-- Ketan Bhalla -->
+      <div class="team-card">
+        <div class="team-card-inner">
+          <div>
+            <div class="team-name">Ketan Bhalla</div>
+            <div class="team-title">Co-Founder &amp; CEO</div>
+            <p class="team-bio">Ketan studied Electrical Engineering at the University of Alberta and founded JAZZ Solar Solutions in 2008, building it into Ontario's leading community solar provider over 18 years. Before solar, he co-founded companies in semiconductors and optical networking, including a startup acquired by Lucent and one that raised over $100M in venture capital. He brings rare depth across hardware engineering, photovoltaics, and building technology companies from the ground up.</p>
+          </div>
+          <img src="Showcase%20photos/Ketan%20Headshot.jpg" alt="Ketan Bhalla" class="team-photo" />
+        </div>
+      </div>
+
+      <!-- Jon Carr -->
+      <div class="team-card">
+        <div class="team-card-inner">
+          <div>
+            <div class="team-name">Jon Carr</div>
+            <div class="team-title">Co-Founder &amp; COO</div>
+            <p class="team-bio">Jon studied Sustainable and Renewable Energy at Carleton University. Before Moose AI, he spent six years at JAZZ Solar Solutions designing and delivering solar and battery storage projects across approximately 15 First Nations communities in Ontario. He brings deep hands-on experience in solar EPC, community energy, and Indigenous partnership.</p>
+          </div>
+          <img src="Showcase%20photos/Jon%20Carr%20Headshot.png" alt="Jon Carr" class="team-photo" />
+        </div>
+      </div>
+
+      <!-- Ethan Harrison -->
+      <div class="team-card">
+        <div class="team-card-inner">
+          <div>
+            <div class="team-name">Ethan Harrison</div>
+            <div class="team-title">Co-Founder &amp; CTO</div>
+            <p class="team-bio">Ethan studied Electrical Engineering and Technology Policy at MIT. Before Moose AI, he worked at the International Energy Agency in Paris and led ML and data analytics work for the United Nations in Sri Lanka. He brings a deep background in machine learning and energy systems.</p>
+          </div>
+          <img src="Showcase%20photos/Ethan%20Headshot.jpg" alt="Ethan Harrison" class="team-photo" />
+        </div>
+      </div>
+
+    </div>
+
+    <div class="team-subheading" style="margin-top: 3rem;">Founding Partners</div>
+    <div class="team-grid">
+
+      <!-- JAZZ Solar Solutions -->
       <div class="team-card">
         <div class="team-card-inner no-photo">
           <div>
@@ -893,6 +953,8 @@
           </div>
         </div>
       </div>
+
+      <!-- Lac des Mille Lacs First Nation -->
       <div class="team-card">
         <div class="team-card-inner">
           <div>
@@ -905,6 +967,7 @@
           <img src="ldml-solar.jpg" alt="Lac des Mille Lacs First Nation solar array" class="team-photo" />
         </div>
       </div>
+
     </div>
   </section>
 
